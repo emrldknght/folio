@@ -1,0 +1,314 @@
+:root {
+    --color-white: #FFFFFF;
+    --color-bg: #F9F9FC;
+    --color-orange: #FF6B35;
+    --color-orange-hover: #E55A2B;
+    --color-orange-light: #FFF0EB;
+    --color-dark: #1E1E24;
+    --color-gray: #6C757D;
+    --color-shadow: rgba(255, 107, 53, 0.15);
+    --color-social-bg: #F5F5FA; /* Фон для иконок соцсетей */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--color-bg);
+    color: var(--color-dark);
+    padding: 40px 20px;
+    line-height: 1.6;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    flex: 1;
+}
+
+/* --- ШАПКА --- */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 60px;
+    padding-bottom: 20px;
+    border-bottom: 3px solid var(--color-orange-light);
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.logo {
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--color-dark);
+}
+
+.logo span {
+    color: var(--color-orange);
+}
+
+.contact-btn {
+    background-color: var(--color-orange);
+    color: white;
+    padding: 10px 25px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 14px;
+    transition: background-color 0.2s ease;
+    box-shadow: 0 4px 10px var(--color-shadow);
+}
+
+.contact-btn:hover {
+    background-color: var(--color-orange-hover);
+}
+
+/* --- ЗАГОЛОВОК ПРОЕКТОВ --- */
+.projects-title {
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 40px;
+    letter-spacing: -0.5px;
+}
+
+.projects-title span {
+    background-color: var(--color-orange);
+    color: white;
+    padding: 2px 12px;
+    border-radius: 20px;
+    font-size: 18px;
+    margin-left: 10px;
+}
+
+/* --- СЕТКА ПРОЕКТОВ --- */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    margin-bottom: 60px;
+}
+
+/* --- КАРТОЧКА ПРОЕКТА --- */
+.project-card {
+    background-color: var(--color-white);
+    border-radius: 20px;
+    padding: 25px 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid rgba(255, 107, 53, 0.08);
+}
+
+.project-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px var(--color-shadow);
+    border-color: var(--color-orange-light);
+}
+
+.project-image {
+    width: 100%;
+    height: 120px;
+    object-fit: contain;
+    background-color: var(--color-orange-light);
+    border-radius: 12px;
+    padding: 15px;
+    margin-bottom: 20px;
+    transition: background-color 0.2s;
+}
+
+.project-card:hover .project-image {
+    background-color: #FFE4D9;
+}
+
+.project-description {
+    font-size: 15px;
+    font-weight: 500;
+    color: var(--color-dark);
+    margin-bottom: 15px;
+    flex-grow: 1;
+    line-height: 1.5;
+}
+
+.project-link {
+    color: var(--color-orange);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 14px;
+    border-top: 1px solid #eee;
+    padding-top: 15px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    transition: color 0.2s;
+    word-break: break-all;
+}
+
+.project-link:hover {
+    color: var(--color-orange-hover);
+}
+
+.project-link::after {
+    content: "→";
+    font-size: 18px;
+    transition: transform 0.2s;
+}
+
+.project-link:hover::after {
+    transform: translateX(5px);
+}
+
+/* ======================================== */
+/* НОВЫЙ БЛОК — СОЦИАЛЬНЫЕ СЕТИ */
+/* ======================================== */
+
+.social-block {
+    background-color: var(--color-white);
+    border-radius: 24px;
+    padding: 40px 50px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+    border: 1px solid rgba(255, 107, 53, 0.08);
+    margin-top: 20px;
+    text-align: center;
+}
+
+.social-title {
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+
+.social-subtitle {
+    color: var(--color-gray);
+    font-size: 15px;
+    margin-bottom: 30px;
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    flex-wrap: wrap;
+}
+
+.social-link {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background-color: var(--color-social-bg);
+    padding: 12px 28px;
+    border-radius: 60px;
+    text-decoration: none;
+    color: var(--color-dark);
+    font-weight: 600;
+    font-size: 15px;
+    transition: all 0.25s ease;
+    border: 2px solid transparent;
+}
+
+/* Иконки SVG внутри ссылок */
+.social-link svg {
+    width: 28px;
+    height: 28px;
+    flex-shrink: 0;
+    transition: transform 0.25s ease;
+}
+
+/* Цвета при наведении */
+
+/* Telegram */
+.social-link.telegram:hover {
+    background-color: #E8F5FE;
+    border-color: #0088CC;
+    color: #0088CC;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 136, 204, 0.2);
+}
+.social-link.telegram:hover svg {
+    transform: scale(1.1);
+}
+
+/* WhatsApp */
+.social-link.whatsapp:hover {
+    background-color: #E8F9EE;
+    border-color: #25D366;
+    color: #25D366;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(37, 211, 102, 0.2);
+}
+.social-link.whatsapp:hover svg {
+    transform: scale(1.1);
+}
+
+/* VK */
+.social-link.vk:hover {
+    background-color: #E8EEF7;
+    border-color: #4C75A3;
+    color: #4C75A3;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(76, 117, 163, 0.2);
+}
+.social-link.vk:hover svg {
+    transform: scale(1.1);
+}
+
+/* --- АДАПТИВНОСТЬ --- */
+@media (max-width: 992px) {
+    .projects-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .social-block {
+        padding: 30px 20px;
+    }
+    .social-icons {
+        gap: 15px;
+    }
+    .social-link {
+        padding: 10px 20px;
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 600px) {
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+
+    .projects-title {
+        font-size: 26px;
+    }
+
+    body {
+        padding: 20px 15px;
+    }
+
+    .social-icons {
+        flex-direction: column;
+        align-items: center;
+        gap: 12px;
+    }
+
+    .social-link {
+        width: 100%;
+        justify-content: center;
+        padding: 14px 20px;
+    }
+
+    .social-block {
+        padding: 25px 15px;
+    }
+}
